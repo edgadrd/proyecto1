@@ -52,4 +52,9 @@ public class CuentaController {
         return new ResponseEntity<>(cuentaService.clientWhitAccount(id), HttpStatus.OK);
     }
 
+    @GetMapping(value = "/existeCuenta/{id}")
+    public ResponseEntity<Boolean> existeCuenta(@PathVariable ("id") Long id) {
+        return new ResponseEntity<>(cuentaService.existsById(id), HttpStatus.OK);
+    }
+
 }

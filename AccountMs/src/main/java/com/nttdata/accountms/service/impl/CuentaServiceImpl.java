@@ -12,9 +12,7 @@ import feign.FeignException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.math.BigDecimal;
 import java.util.List;
-import java.util.Optional;
 import java.util.Random;
 import java.util.stream.Collectors;
 
@@ -103,6 +101,11 @@ public class CuentaServiceImpl implements ICuentaService {
     @Override
     public boolean clientWhitAccount(Long clienteId) {
         return cuentaRepository.existsByClienteId(clienteId);
+    }
+
+    @Override
+    public boolean existsById(Long id) {
+        return cuentaRepository.existsById(id);
     }
 
 
